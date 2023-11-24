@@ -1,0 +1,99 @@
+[debug] [2023-11-24T14:52:16.433Z] ----------------------------------------------------------------------
+[debug] [2023-11-24T14:52:16.439Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-24T14:52:16.440Z] CLI Version:   12.9.1
+[debug] [2023-11-24T14:52:16.441Z] Platform:      win32
+[debug] [2023-11-24T14:52:16.441Z] Node Version:  v20.10.0
+[debug] [2023-11-24T14:52:16.441Z] Time:          Fri Nov 24 2023 15:52:16 GMT+0100 (West Africa Standard Time)
+[debug] [2023-11-24T14:52:16.442Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-24T14:52:16.669Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-24T14:52:16.671Z] > authorizing via signed-in user (okekeifeanyi30@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\HP\Desktop\apptest
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-11-24T14:54:07.861Z] Using project from CLI flag: expense-tracker-bc3cd
+[debug] [2023-11-24T14:54:07.863Z] > refreshing access token with scopes: []
+[debug] [2023-11-24T14:54:07.867Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-11-24T14:54:07.867Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-24T14:54:08.477Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-11-24T14:54:08.477Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-11-24T14:54:08.494Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd [none]
+[debug] [2023-11-24T14:54:09.186Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd 200
+[debug] [2023-11-24T14:54:09.186Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd {"projectId":"expense-tracker-bc3cd","projectNumber":"590307628848","displayName":"expense-tracker","name":"projects/expense-tracker-bc3cd","resources":{"hostingSite":"expense-tracker-bc3cd","realtimeDatabaseInstance":"expense-tracker-bc3cd-default-rtdb","storageBucket":"expense-tracker-bc3cd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_0b4620c2-7411-45e1-bdc3-dc6bcdfef512"}
+[info] i  Using project expense-tracker-bc3cd (expense-tracker) 
+[info] 
+=== Hosting Setup
+[debug] [2023-11-24T14:54:09.197Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd [none]
+[debug] [2023-11-24T14:54:09.472Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd 200
+[debug] [2023-11-24T14:54:09.472Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd {"projectId":"expense-tracker-bc3cd","projectNumber":"590307628848","displayName":"expense-tracker","name":"projects/expense-tracker-bc3cd","resources":{"hostingSite":"expense-tracker-bc3cd","realtimeDatabaseInstance":"expense-tracker-bc3cd-default-rtdb","storageBucket":"expense-tracker-bc3cd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_0b4620c2-7411-45e1-bdc3-dc6bcdfef512"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
+[debug] [2023-11-24T14:55:58.537Z] ----------------------------------------------------------------------
+[debug] [2023-11-24T14:55:58.545Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\HP\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2023-11-24T14:55:58.546Z] CLI Version:   12.9.1
+[debug] [2023-11-24T14:55:58.546Z] Platform:      win32
+[debug] [2023-11-24T14:55:58.547Z] Node Version:  v20.10.0
+[debug] [2023-11-24T14:55:58.547Z] Time:          Fri Nov 24 2023 15:55:58 GMT+0100 (West Africa Standard Time)
+[debug] [2023-11-24T14:55:58.547Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-11-24T14:55:58.741Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-11-24T14:55:58.743Z] > authorizing via signed-in user (okekeifeanyi30@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\HP\Desktop\apptest
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-11-24T14:56:40.207Z] Using project from CLI flag: expense-tracker-bc3cd
+[debug] [2023-11-24T14:56:40.210Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd [none]
+[debug] [2023-11-24T14:56:40.749Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd 200
+[debug] [2023-11-24T14:56:40.750Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd {"projectId":"expense-tracker-bc3cd","projectNumber":"590307628848","displayName":"expense-tracker","name":"projects/expense-tracker-bc3cd","resources":{"hostingSite":"expense-tracker-bc3cd","realtimeDatabaseInstance":"expense-tracker-bc3cd-default-rtdb","storageBucket":"expense-tracker-bc3cd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_0b4620c2-7411-45e1-bdc3-dc6bcdfef512"}
+[info] i  Using project expense-tracker-bc3cd (expense-tracker) 
+[info] 
+=== Hosting Setup
+[debug] [2023-11-24T14:56:40.762Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd [none]
+[debug] [2023-11-24T14:56:41.071Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd 200
+[debug] [2023-11-24T14:56:41.072Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/expense-tracker-bc3cd {"projectId":"expense-tracker-bc3cd","projectNumber":"590307628848","displayName":"expense-tracker","name":"projects/expense-tracker-bc3cd","resources":{"hostingSite":"expense-tracker-bc3cd","realtimeDatabaseInstance":"expense-tracker-bc3cd-default-rtdb","storageBucket":"expense-tracker-bc3cd.appspot.com","locationId":"us-central"},"state":"ACTIVE","etag":"1_0b4620c2-7411-45e1-bdc3-dc6bcdfef512"}
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 

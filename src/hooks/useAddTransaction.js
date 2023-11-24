@@ -1,6 +1,6 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../config/firbase-config";
-import { useGetUserInfo } from "./useGetIUserInfo";
+import { useGetUserInfo } from "./useGetUserInfo";
 
 export const useAddTransaction = () => {
     const transactionCollectionRef = collection(db, "transactions")

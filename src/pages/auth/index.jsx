@@ -1,24 +1,29 @@
 import { auth, provider } from "../../config/firbase-config";
 import { signInWithPopup } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
-import "./styles.css"
-
+import { Navigate, useNavigate } from "react-router-dom";
+import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import "./styles.css";
+// import { useEffect } from "react";
 
 export const Auth = () => {
-
-const navigate = useNavigate();
+  const navigate = useNavigate();
+  const { isAuth } = useGetUserInfo();
 
   const signInWithGoogle = async () => {
     const results = await signInWithPopup(auth, provider);
     const authinfo = {
-        userID: results.user.uid,
-        name: results.user.displayName,
-        profilePhoto: results.user.photoURL,
-        isAuth: true,
-    }
+      userID: results.user.uid,
+      name: results.user.displayName,
+      profilePhoto: results.user.photoURL,
+      isAuth: true,
+    };
     localStorage.setItem("auth", JSON.stringify(authinfo));
-    navigate("/expense-tracker"); //you can actually put to navigate to any page of your choice
+    navigate("/expense-tracker");
   };
+
+if (isAuth){
+  return <Navigate to="expense-tracker" />;
+}
   return (
     <div className="login-page">
       <p> Sign In With Google to Continue </p>

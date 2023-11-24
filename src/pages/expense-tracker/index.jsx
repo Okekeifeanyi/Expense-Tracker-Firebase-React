@@ -1,15 +1,23 @@
 import { useState } from "react";
 import { useAddTransaction } from "../../hooks/useAddTransaction";
 import { useGetTransactions } from "../../hooks/useGetTransactions";
-import "./styles.css"
+import { useGetUserInfo } from "../../hooks/useGetUserInfo";
+import "./styles.css";
+import { auth } from "../../config/firbase-config";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
 
 export const ExpenseTracker = () => {
   const { addTransaction } = useAddTransaction();
-  const { transactions } = useGetTransactions();
+  const { transactions, transactionTotals } = useGetTransactions();
+  const { name, profilePhoto } = useGetUserInfo();
+  const navigate = useNavigate();
 
   const [description, setDescription] = useState("");
   const [transactionAmount, setTransactionAmount] = useState(0);
   const [transactionType, setTranactionType] = useState("");
+
+  const { balance, income, expenses } = transactionTotals;
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -18,25 +26,38 @@ export const ExpenseTracker = () => {
       transactionAmount,
       transactionType,
     });
+
+    setDescription("");
+    setTransactionAmount("");
+  };
+
+  const signUserOut = async () => {
+    try {
+      await signOut(auth);
+      localStorage.clear();
+      navigate("/");
+    } catch (err) {
+      console.error(err);
+    }
   };
   return (
     <>
       <div className="expense-tracker">
         <div className="container">
-          <h1> Expense Tracker</h1>
+          <h1>{name}'s Expense Tracker</h1>
           <div className="balance">
             <h3> Your Balance</h3>
-            <h2> $0.00</h2>
+            {balance >= 0 ? <h2> ${balance}</h2> : <h2> -${balance * -1}</h2>}
           </div>
 
           <div className="summary">
             <div className="income">
               <h4> Income</h4>
-              <p> $0.00</p>
+              <p> ${income}</p>
             </div>
             <div className="expenses">
               <h4> Expenses</h4>
-              <p> $0.00</p>
+              <p> ${expenses}</p>
             </div>
           </div>
 
@@ -44,12 +65,14 @@ export const ExpenseTracker = () => {
             <input
               type="text"
               placeholder="Description"
+              value={description}
               required
               onChange={(e) => setDescription(e.target.value)}
             />
             <input
               type="number"
               placeholder="Amount"
+              value={transactionAmount}
               required
               onChange={(e) => setTransactionAmount(e.target.value)}
             />
@@ -74,9 +97,19 @@ export const ExpenseTracker = () => {
             <button type="submit"> Add Traxnsaction</button>
           </form>
         </div>
+        {profilePhoto && (
+          <div className="profile">
+            {" "}
+            <img className="profile-photo" src={profilePhoto} alt="userImage" />
+            <button className="sign-out-button" onClick={signUserOut}>
+              {" "}
+              Sign Out
+            </button>
+          </div>
+        )}
       </div>
 
-      <div className="transanctions">
+      <div className="transactions">
         <h3> Transactions</h3>
         <ul>
           {transactions.map((transaction) => {
@@ -87,7 +120,14 @@ export const ExpenseTracker = () => {
                 {" "}
                 <h4>{description}</h4>
                 <p>
-                  ${transactionAmount} * <label style={{color: transactionType === "expense" ? "red" : "green"}} >{transactionType}</label>
+                  ${transactionAmount} *{" "}
+                  <label
+                    style={{
+                      color: transactionType === "expense" ? "red" : "green",
+                    }}
+                  >
+                    {transactionType}
+                  </label>
                 </p>
               </li>
             );
